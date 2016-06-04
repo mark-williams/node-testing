@@ -6,7 +6,7 @@ Initially some tests for a simple PubSub module. Uses sinon to create stubs that
 ####PubSub - refactored subscribe method
 To avoid the need to track subscribers for the purpose of unsubscribing, the subscribe function returns a function that cancel the just executed subscription.
 
-This was using Array.splice:
+This was using array.splice:
 
 ~~~~
 export const subscribe = (event, subscriber) => {
@@ -29,7 +29,7 @@ export const subscribe = (event, subscriber) => {
 };
 ~~~~
 
-however this has now been refactored to just use Array.filter:
+however this has now been refactored to just use array.filter:
 ~~~~
 export const subscribe = (event, subscriber) => {
     if (subscribers.hasOwnProperty(event) === false) {
